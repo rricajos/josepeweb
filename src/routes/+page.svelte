@@ -5,5 +5,6 @@
   h1 {
     width: 100%;
     text-align: center;
+    font-size: 4rem;
   }
 </style>
