@@ -17,7 +17,6 @@
 	</div>
 </header>
 
-<slot />s
 
 <style>
   .home {
@@ -82,7 +81,7 @@
 
 	nav {
 		box-sizing: border-box;
-		padding: 0.25em 1em;
+		padding: 0.30em 2em;
 		font-size: 23px;
 		font-weight: bold;
 		color: antiquewhite;
