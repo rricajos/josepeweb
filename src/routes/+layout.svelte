@@ -37,9 +37,9 @@
 			<div class="line"></div>
 		</button> -->
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="{base}/products">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="{base}/products">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="{base}/products">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="{base}/">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="{base}/">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="{base}/">Contacto</a>
 		</div>
 	</div>
 </nav>
