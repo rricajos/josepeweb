@@ -1,6 +1,8 @@
 <script>
 	export let data;
-	let base = '' | `/${string}`;
+	import { assets, base, resolveRoute } from '$app/paths';
+
+
 
 	import { onMount } from 'svelte';
 	let subnav, navicon;
