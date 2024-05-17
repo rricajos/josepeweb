@@ -1,203 +1,234 @@
 <script>
-	
 	import { onMount } from 'svelte';
-  let subnav;
+	let subnav, navicon, openMenu;
 	onMount(() => {
-    subnav = document.querySelector('.subnav');
-    subnav.classList.toggle('active');
+		subnav = document.querySelector('.subnav');
+		navicon = document.querySelector('#nav-icon3');
+		navicon.classList.toggle('open'), subnav.classList.toggle('active');
 	});
 </script>
 
-<header>
-	<div class="supercontainer">
-		<nav>
-			<p class="home">Josepe Sierra</p>
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<button class="hamburguer" on:click={subnav.classList.toggle('active')}>
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</button>
-			<div class="subnav active">
-				<a class="subnav-button hover-underline-animation">Productos</a>
-				<span>·</span>
-				<a class="subnav-button hover-underline-animation">Servicios</a>
-				<span>·</span>
-				<a class="subnav-button hover-underline-animation">Contacto</a>
-			</div>
-		</nav>
+<nav>
+	<div class="contcenter">
+		<h1>Giuseppe Sierra</h1>
+		<button
+			id="nav-icon3"
+			class="open"
+			on:click={() => {
+				navicon.classList.toggle('open'), subnav.classList.toggle('active');
+			}}
+		>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<!-- <button class="hamburguer" on:click={subnav.classList.toggle('not-active')}>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</button> -->
+		<div class="subnav active">
+			<a class="subnav-button" id="subnav-button-products" href="/">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="/">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="/">Contacto</a>
+		</div>
 	</div>
-</header>
+</nav>
+
+<slot></slot>
+<footer>
+	<div class="contcenter">
+		<a href="/">License</a>
+		<a href="/">Condition</a>
+	</div>
+</footer>
 
 <style>
-	.hamburguer {
-		display: none;
-	}
-	@media only screen and (max-width: 730px) {
-		.hamburguer {
-			display: block;
-			cursor: pointer;
-			align-self: center;
-      background-color: #1f1f1f;
-      border: none;
-		}
-		.hamburguer .line {
-			width: 60px;
-			height: 6px;
-			background-color: antiquewhite;
-			margin: 12px 0;
-		}
-    .active {
-      display: none !important;
-      top: -300px !important;
-      transition: all 2s ease-in-out !important;
-    }
-		.subnav {
-      z-index: -2;
-      
-      display: flex;
-			flex-flow: column nowrap;
-			align-items: center;
-      
-			box-sizing: border-box;
-			padding: 32px;
-			background-color: #1f1f1f;
-			position: absolute;
-      top: 90px;
-			left: 0;
-			right: 0;
-			width: 100vw;
-		
-   
-
-     
-		}
-
-		.subnav-button {
-			box-sizing: border-box;
-			padding: 16px 0px;
-			font-size: 28px;
-		}
-		.subnav > span {
-			display: none;
-		}
-
-		nav {
-      z-index: 10;
-			position: fixed;
-			padding: 0px 20px !important;
-			background-color: #1f1f1f;
-		}
-	}
-
-	.home {
-		display: inline-block;
-		position: relative;
-    font-size: 28px;
-		padding: 6px;
-	}
-	.home::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: antiquewhite;
-		transform-origin: bottom right;
-		transition: transform 0.25s ease-in-out;
-		transform: scaleY(1);
-		transform-origin: bottom left;
-	}
-
 	:global(body) {
-		margin: 0px;
-		background-color: #232323;
-		overflow: hidden;
 		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
 			Geneva, Verdana, sans-serif;
+		margin: 0px;
+	}
+	:global(*) {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
 	}
 
-	.supercontainer {
+	.contcenter {
 		max-width: 920px;
 		width: 100%;
-		min-height: 100vh;
 		margin: 0 auto;
-		background-color: #232323af;
-		box-shadow: 0px 0px 10px black;
 	}
-
-	header {
-		height: 100vh;
-		width: 100%;
-		background-color: #232323d3;
+	nav {
+		background-color: blueviolet;
+	}
+	nav > .contcenter {
+		height: 20vh;
 		display: flex;
-		flex-flow: column nowrap;
-		justify-content: flex-start;
+		flex-flow: row wrap;
+		justify-content: space-between;
 		align-items: center;
 	}
-	header:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		background-image: url($lib/assets/handvshand.png);
-		background-size: cover;
-		background-position: center;
-
-		filter: blur(4px);
-
-		z-index: -23;
+	h1 {
+		font-size: 1.5em;
+		padding-left: 2rem;
+		z-index: 100;
 	}
-
-	nav {
-		box-sizing: border-box;
-		padding: 0.3em 2em;
-		font-size: 23px;
-		font-weight: bold;
-		color: antiquewhite;
-		text-shadow: 0px 0px 10px black;
-		width: 100%;
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: baseline;
-		justify-content: space-between;
-	}
-
 	a {
-		box-sizing: border-box;
-		padding: 6px;
+		font-size: 1.5em;
 		text-decoration: none;
 		color: antiquewhite;
 	}
-
-	a:hover {
-		cursor: pointer;
+	.subnav {
+		padding: 1rem;
+		border-radius: 0 0% 100% 0%;
+	}
+	.subnav-button {
+		padding: 0.5rem;
 	}
 
-	.hover-underline-animation {
-		display: inline-block;
-		position: relative;
+	footer {
+		height: 1024px;
 	}
+	nav,
+	footer {
+		color: antiquewhite;
+		text-shadow: 0px 0px 0.5rem black;
 
-	.hover-underline-animation::after {
-		content: '';
-		position: absolute;
 		width: 100%;
-		transform: scaleY(0);
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: antiquewhite;
-		transform-origin: bottom right;
-		transition: transform 0.25s ease-in-out;
 	}
 
-	.hover-underline-animation:hover::after {
-		transform: scaleY(1);
-		transform-origin: bottom left;
+
+
+	@media only screen and (max-width: 730px) {
+		h1::after {
+			text-wrap: wrap;
+
+			color: burlywood;
+		}
+	
+		nav {
+			position: fixed;
+		}
+		nav > .contcenter {
+			align-items: center;
+			overflow: hidden;
+			height: 7em;
+		}
+		#subnav-button-products::before {
+			content: '📦 ';
+			padding-left: 1rem;
+		}
+		#subnav-button-services::before {
+			content: '👽 ';
+			padding-left: 1rem;
+		}
+		#subnav-button-contact::before {
+			content: '📞 ';
+			padding-left: 1rem;
+		}
+		.subnav {
+			display: flex;
+			flex-flow: column;
+
+			position: absolute;
+			padding: 0 0 3rem 1rem;
+			right: 100vw;
+			width: 100vw;
+
+			top: 6.9em;
+			text-align: left;
+			z-index: 10;
+			background-color: blueviolet;
+			transition: right 0.25s;
+		}
+
+		.subnav.active {
+			right: 0;
+		}
+
+		#nav-icon3 {
+			display: block !important;
+		}
+	}
+
+	/* Icon 3 */
+	#nav-icon3 {
+		display: none	;
+		width: 60px;
+		height: 45px;
+		position: relative;
+		margin-right:2rem;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.5s ease-in-out;
+		-moz-transition: 0.5s ease-in-out;
+		-o-transition: 0.5s ease-in-out;
+		transition: 0.5s ease-in-out;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+	}
+
+	#nav-icon3 span {
+		display: block;
+		position: absolute;
+		height: 9px;
+		width: 100%;
+		background-color: antiquewhite;
+		border-radius: 9px;
+		opacity: 1;
+		left: 0;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+	}
+
+	#nav-icon3 span:nth-child(1) {
+		top: 0px;
+	}
+
+	#nav-icon3 span:nth-child(2),
+	#nav-icon3 span:nth-child(3) {
+		top: 18px;
+	}
+
+	#nav-icon3 span:nth-child(4) {
+		top: 36px;
+	}
+
+	#nav-icon3.open > span:nth-child(1) {
+		top: 18px;
+		width: 0%;
+		left: 50%;
+	}
+
+	#nav-icon3.open span:nth-child(2) {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	#nav-icon3.open span:nth-child(3) {
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	#nav-icon3.open span:nth-child(4) {
+		top: 18px;
+		width: 0%;
+		left: 50%;
 	}
 </style>
