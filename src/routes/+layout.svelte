@@ -29,9 +29,9 @@
 			<div class="line"></div>
 		</button> -->
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="/">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="/">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="/">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products">Productos</a>
+			<a class="subnav-button" id="subnav-button-services">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" >Contacto</a>
 		</div>
 	</div>
 </nav>
