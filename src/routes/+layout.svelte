@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import { assets, base, resolveRoute } from '$app/paths';
+	import { base } from '$app/paths';
 
 	import { onMount } from 'svelte';
 	let subnav, navicon;
@@ -31,9 +31,9 @@
 		</button>
 
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="/products">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="/products">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="/products">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="{base}/products">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="{base}/products">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="{base}/products">Contacto</a>
 		</div>
 	</div>
 </nav>
