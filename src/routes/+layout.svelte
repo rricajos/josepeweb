@@ -1,11 +1,16 @@
 <script>
+	export let data;
+	let base = '' | `/${string}`;
+
 	import { onMount } from 'svelte';
-	let subnav, navicon, openMenu;
+	let subnav, navicon;
 	onMount(() => {
 		subnav = document.querySelector('.subnav');
 		navicon = document.querySelector('#nav-icon3');
-		navicon.classList.toggle('open'), subnav.classList.toggle('active');
+		navicon.classList.toggle('open');
+		subnav.classList.toggle('active');
 	});
+	console.log(data);
 </script>
 
 <nav>
@@ -15,7 +20,8 @@
 			id="nav-icon3"
 			class="open"
 			on:click={() => {
-				navicon.classList.toggle('open'), subnav.classList.toggle('active');
+				navicon.classList.toggle('open');
+				subnav.classList.toggle('active');
 			}}
 		>
 			<span></span>
@@ -29,9 +35,9 @@
 			<div class="line"></div>
 		</button> -->
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products">Productos</a>
-			<a class="subnav-button" id="subnav-button-services">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" >Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="{base}/products">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="{base}/products">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="{base}/products">Contacto</a>
 		</div>
 	</div>
 </nav>
@@ -100,15 +106,13 @@
 		width: 100%;
 	}
 
-
-
 	@media only screen and (max-width: 730px) {
 		h1::after {
 			text-wrap: wrap;
 
 			color: burlywood;
 		}
-	
+
 		nav {
 			position: fixed;
 		}
@@ -156,11 +160,11 @@
 
 	/* Icon 3 */
 	#nav-icon3 {
-		display: none	;
+		display: none;
 		width: 60px;
 		height: 45px;
 		position: relative;
-		margin-right:2rem;
+		margin-right: 2rem;
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
@@ -206,7 +210,7 @@
 		top: 36px;
 	}
 
-	#nav-icon3.open > span:nth-child(1) {
+	#nav-icon3.open span:nth-child(1) {
 		top: 18px;
 		width: 0%;
 		left: 50%;
