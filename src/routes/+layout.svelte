@@ -15,7 +15,8 @@
 
 <nav>
 	<div class="contcenter">
-		<h1>Giuseppe Sierra</h1>
+		<a href="{base}/index.html"><h1>Giuseppe Sierra</h1></a>
+		
 		<button
 			id="nav-icon3"
 			class="open"
