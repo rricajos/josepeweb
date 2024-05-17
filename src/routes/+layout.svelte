@@ -37,9 +37,9 @@
 			<div class="line"></div>
 		</button> -->
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="/{base}">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="/{base}">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="/{base}">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="{base}">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="{base}">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="{base}">Contacto</a>
 		</div>
 	</div>
 </nav>
@@ -120,7 +120,7 @@
 		nav > .contcenter {
 			align-items: center;
 			overflow: hidden;
-			height: 7em;
+			height: 5em;
 		}
 		#subnav-button-products::before {
 			content: '📦 ';
@@ -143,7 +143,7 @@
 			right: 100vw;
 			width: 100vw;
 
-			top: 6.9em;
+			top: 4.9em;
 			text-align: left;
 			z-index: 10;
 			background-color: blueviolet;
@@ -162,8 +162,8 @@
 	/* Icon 3 */
 	#nav-icon3 {
 		display: none;
-		width: 60px;
-		height: 45px;
+		width: 48px;
+		height: 48px;
 		position: relative;
 		margin-right: 2rem;
 		-webkit-transform: rotate(0deg);
