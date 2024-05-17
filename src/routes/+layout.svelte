@@ -37,17 +37,18 @@
 			<div class="line"></div>
 		</button> -->
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="{base}/products.html">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="{base}/products.html">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="{base}/products.html">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="#products">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="#products">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="#products">Contacto</a>
 		</div>
 	</div>
 </nav>
 
 <slot></slot>
 <footer>
-	<div class="contcenter">
 
+	<div class="contcenter">
+		<h2 id="products">products</h2>
 	</div>
 </footer>
 
