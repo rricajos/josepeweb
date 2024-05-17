@@ -2,8 +2,6 @@
 	export let data;
 	import { assets, base, resolveRoute } from '$app/paths';
 
-
-
 	import { onMount } from 'svelte';
 	let subnav, navicon;
 	onMount(() => {
@@ -31,22 +29,22 @@
 			<span></span>
 			<span></span>
 		</button>
-		<!-- <button class="hamburguer" on:click={subnav.classList.toggle('not-active')}>
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
-		</button> -->
+
 		<div class="subnav active">
-			<a class="subnav-button" id="subnav-button-products" href="#products">Productos</a>
-			<a class="subnav-button" id="subnav-button-services" href="#products">Servicios</a>
-			<a class="subnav-button" id="subnav-button-contact" href="#products">Contacto</a>
+			<a class="subnav-button" id="subnav-button-products" href="/products">Productos</a>
+			<a class="subnav-button" id="subnav-button-services" href="/products">Servicios</a>
+			<a class="subnav-button" id="subnav-button-contact" href="/products">Contacto</a>
 		</div>
 	</div>
 </nav>
 
-<slot></slot>
-<footer>
+<main>
+	<div class="contcenter">
+		<slot></slot>
+	</div>
+</main>
 
+<footer>
 	<div class="contcenter">
 		<h2 id="products">products</h2>
 	</div>
