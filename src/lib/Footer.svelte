@@ -6,7 +6,7 @@
 	<div class="contcenter">
 		<a href="{base}/terms.html"> Información de Contacto</a>
 		<a href="{base}/terms.html"> Preguntas Frecuentes</a>
-		<a href="{base}/terms.html"> Política de privacidad</a>
+		<a href="{base}/priv.html"> Política de privacidad</a>
 		<a href="{base}/terms.html"> Términos y condiciones</a>
 	</div>
 </footer>

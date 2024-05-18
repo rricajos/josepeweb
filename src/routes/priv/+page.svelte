@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	export let data;
 </script>
 
 <h2>Términos y Condiciones</h2>
