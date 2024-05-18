@@ -48,8 +48,7 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-	nav,
-	footer {
+	nav {
 		text-shadow: 0px 0px 0.5rem black;
 		width: 100%;
 	}
