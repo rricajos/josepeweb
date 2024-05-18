@@ -1,12 +1,13 @@
 <script>
+  	import { base } from '$app/paths';
 </script>
 
 <footer>
 	<div class="contcenter">
-		<!-- <a href=""> Información de Contacto</a>
-		<a href=""> Preguntas Frecuentes</a>
-		<a href=""> Política de privacidad</a>
-		<a href=""> Términos y condiciones</a> -->
+		<a href="{base}/terms.html"> Información de Contacto</a>
+		<a href="{base}/terms.html"> Preguntas Frecuentes</a>
+		<a href="{base}/terms.html"> Política de privacidad</a>
+		<a href="{base}/terms.html"> Términos y condiciones</a>
 	</div>
 </footer>
 

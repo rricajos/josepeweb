@@ -11,7 +11,7 @@
 
 <nav>
 	<div class="contcenter">
-		<a href="{base}/index.html"><h1>Giuseppe Sierra</h1></a>
+		<a href="{base}/"><h1>Giuseppe Sierra</h1></a>
 
 		<button on:click={toggle}>
 			<NavIcon {open} />
