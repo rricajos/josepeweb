@@ -3,7 +3,7 @@
 	export let data;
 </script>
 
-<h2>Términos y Condiciones</h2>
+<h2>Política de privacidad</h2>
 
 <h2>1. Introducción</h2>
 <p>
