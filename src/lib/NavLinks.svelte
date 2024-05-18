@@ -4,9 +4,9 @@
 </script>
 
 <div class:open>
-	<a id="products" href="{base}/products">Productos</a>
-	<a id="services" href="{base}/products">Servicios</a>
-	<a id="contact" href="{base}/products">Contacto</a>
+	<a id="products" href="{base}/products.html">Productos</a>
+	<a id="services" href="{base}/products.html">Servicios</a>
+	<a id="contact" href="{base}/products.html">Contacto</a>
 </div>
 
 <style>
